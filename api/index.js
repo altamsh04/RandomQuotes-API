@@ -1,4 +1,6 @@
 const app = require('express')();
+const path = require('path');
+
 const port = 8080;
 const quotes = [
     { id: 1, quote: "The only way to do great work is to love what you do." },
@@ -12,6 +14,10 @@ const quotes = [
     { id: 9, quote: "Believe you can and you're halfway there." },
     { id: 10, quote: "Act as if what you do makes a difference. It does." }
 ];
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, 'welcome.html'));
+});
 
 app.get("/fetchQuotes", (req, res) => {
     var randomIndex = Math.floor(Math.random() * quotes.length);
