@@ -6,6 +6,7 @@ Welcome to the Daily Quote Dose API! This API provides access to a collection of
   <img src="https://github.com/altamsh04/DailyQuotesDose-API/assets/84860267/8789433f-a489-4801-9e7f-a7b69016442d" alt="DailyQuotesDose">
   <br>
 </div>
+
 ## Getting Started
 
 To get started with the API, you can make a request to the following endpoint to get a random quote:
