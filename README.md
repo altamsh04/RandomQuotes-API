@@ -3,7 +3,7 @@
 Welcome to the Daily Quote Dose API! This API provides access to a collection of motivational quotes that you can use in your applications. It's a free and open API that you can integrate into your projects to inspire and motivate your users.
 <div align='center'>
   <br>
-  <img src="https://github.com/altamsh04/DailyQuotesDose-API/assets/84860267/ef68a3a7-8771-4feb-9d86-dfcf42cce3b5" alt="DailyQuotesDose">
+  <img src="https://github.com/altamsh04/DailyQuotesDose-API/assets/84860267/c8b87762-e305-4d66-8507-47d77f64453a" alt="DailyQuotesDose">
   <br>
 </div>
 ## Getting Started
