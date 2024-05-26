@@ -38,7 +38,7 @@ const quotes = [
 ];
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, 'DailyQuotesDose.html'));
+    res.sendFile(path.join(__dirname, 'RandomQuotesAPI.html'));
 });
 
 app.get("/api/random", (req, res) => {
