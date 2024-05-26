@@ -1,18 +1,23 @@
-# Daily Quote Dose API
+#Random Quotes API
 
-Welcome to the Daily Quote Dose API! This API provides access to a collection of motivational quotes that you can use in your applications. It's a free and open API that you can integrate into your projects to inspire and motivate your users.
+Welcome to the Random Quotes API! This API provides access to a collection of motivational quotes that you can use in your applications. It's a free and open API that you can integrate into your projects to inspire and motivate your users.
 <div align='center'>
   <br>
-  <img src="https://github.com/altamsh04/DailyQuotesDose-API/assets/84860267/8789433f-a489-4801-9e7f-a7b69016442d" alt="DailyQuotesDose">
+  <img src="https://github.com/altamsh04/RandomQuotes-API/assets/84860267/e6934f90-1e68-4bce-9eb6-c2569fda5b31" alt="RandomQuotesAPI">
   <br>
 </div>
+
+## Technologies Used
+- **Language**: JavaScript
+- **backend**: Express.js
+- **Hosting**: Vercel
 
 ## Getting Started
 
 To get started with the API, you can make a request to the following endpoint to get a random quote:
 
 ```
-GET https://dailyquotesdose.onrender.com/api/random
+GET https://random-quotes-freeapi.vercel.app/api/random
 ```
 
 This will return a JSON response with a random quote and its author.
@@ -32,7 +37,7 @@ This will return a JSON response with a random quote and its author.
 You can use the API to display a random quote on your website or application to motivate your users. Here's an example of how you can use the API with JavaScript:
 
 ```javascript
-fetch('https://dailyquotesdose.onrender.com/api/random')
+fetch('https://random-quotes-freeapi.vercel.app/api/random')
     .then(response => response.json())
     .then(data => {
         console.log(data.quote);
