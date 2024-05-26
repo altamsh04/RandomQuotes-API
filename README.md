@@ -45,3 +45,7 @@ fetch('https://random-quotes-freeapi.vercel.app/api/random')
         console.log("- " + data.author);
     });
 ```
+
+## License
+
+This project is licensed under the MIT License[LICENSE].
