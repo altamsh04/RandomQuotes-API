@@ -8,8 +8,9 @@ Welcome to the Random Quotes API! This API provides access to a collection of mo
 </div>
 
 ## Technologies Used
+
 - **Language**: JavaScript
-- **backend**: Express.js
+- **Backend**: Express.js
 - **Hosting**: Vercel
 
 ## Getting Started
