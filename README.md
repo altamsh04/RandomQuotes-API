@@ -48,4 +48,4 @@ fetch('https://random-quotes-freeapi.vercel.app/api/random')
 
 ## License
 
-This project is licensed under the MIT License [LICENSE].
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
