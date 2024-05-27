@@ -1,11 +1,7 @@
 const express = require('express');
 const app = express();
-const cors = require('cors');
 const path = require('path');
 const port = 8080;
-
-app.use(cors());
-
 const quotes = [
     { "id": 1, "quote": "The only limit to our realization of tomorrow is our doubts of today.", "author": "Franklin D. Roosevelt" },
     { "id": 2, "quote": "The best way to predict the future is to invent it.", "author": "Alan Kay" },
