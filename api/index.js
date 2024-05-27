@@ -35,6 +35,11 @@ const quotes = [
     { "id": 30, "quote": "The biggest risk is not taking any risk.", "author": "Mark Zuckerberg" }
 ];
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+    next();
+});
+
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, 'RandomQuotesAPI.html'));
 });
