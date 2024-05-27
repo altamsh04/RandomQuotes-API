@@ -6,6 +6,19 @@ function copyToClipboard() {
         console.error('Failed to copy quote API link:', err);
     });
 }
+
+function get_random_quote() {
+    fetch('https://random-quotes-freeapi.vercel.app/api/random')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("quote").textContent = data.quote; 
+        document.getElementById("quoteAuthor").textContent = "- " + data.author;
+    })
+    .catch(error => {
+        console.error('Error fetching quote:', error);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 const text = "Random Quotes API!";
 const delay = 100;
@@ -26,18 +39,4 @@ function typeWriter(text, i) {
     }
 }
 typeWriter(text, 0);
-
-function get_random_quote() {
-    fetch('https://random-quotes-freeapi.vercel.app/api/random')
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById("quote").textContent = data.quote; 
-        document.getElementById("quoteAuthor").textContent = "- " + data.author;
-    })
-    .catch(error => {
-        console.error('Error fetching quote:', error);
-    });
-}
-
-window.onload = get_random_quote;
 });
