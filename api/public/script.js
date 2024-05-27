@@ -1,3 +1,11 @@
+function copyToClipboard() {
+    const quoteText = document.getElementById('quoteLink').innerText;
+    navigator.clipboard.writeText(quoteText).then(() => {
+        alert('Quote API link copied to clipboard');
+    }).catch(err => {
+        console.error('Failed to copy quote API link:', err);
+    });
+}
 document.addEventListener('DOMContentLoaded', function() {
 const text = "Random Quotes API!";
 const delay = 100;
