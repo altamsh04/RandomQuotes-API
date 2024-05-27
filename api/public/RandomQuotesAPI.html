@@ -48,6 +48,16 @@
             <h6 id="quoteAuthor"></h6>
         </div>
     </div>
+    <script>
+        function copyToClipboard() {
+            const quoteText = document.getElementById('quoteLink').innerText;
+            navigator.clipboard.writeText(quoteText).then(() => {
+                alert('Quote API link copied to clipboard');
+            }).catch(err => {
+                console.error('Failed to copy quote API link:', err);
+            });
+        }
+    </script>
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
