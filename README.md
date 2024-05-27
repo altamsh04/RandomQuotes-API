@@ -3,7 +3,7 @@
 Welcome to the Random Quotes API! This API provides access to a collection of motivational quotes that you can use in your applications. It's a free and open API that you can integrate into your projects to inspire and motivate your users.
 <div align='center'>
   <br>
-  <img src="https://github.com/altamsh04/RandomQuotes-API/assets/84860267/e6934f90-1e68-4bce-9eb6-c2569fda5b31" alt="RandomQuotesAPI">
+  <img src="https://github.com/altamsh04/RandomQuotes-API/assets/84860267/3d7275da-9782-47ba-a754-5f58bdd2c21a" alt="RandomQuotesAPI">
   <br>
 </div>
 
