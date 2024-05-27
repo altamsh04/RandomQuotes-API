@@ -36,7 +36,7 @@ const quotes = [
 ];
 
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+    res.setHeader('Access-Control-Allow-Origin', '*');
     next();
 });
 
