@@ -19,15 +19,6 @@ function typeWriter(text, i) {
 }
 typeWriter(text, 0);
 
-function copyToClipboard() {
-    const quoteText = document.getElementById('quoteLink').innerText;
-    navigator.clipboard.writeText(quoteText).then(() => {
-        alert('Quote API link copied to clipboard');
-    }).catch(err => {
-        console.error('Failed to copy quote API link:', err);
-    });
-}
-
 function get_random_quote() {
     fetch('https://random-quotes-freeapi.vercel.app/api/random')
     .then(response => response.json())
@@ -42,3 +33,12 @@ function get_random_quote() {
 
 window.onload = get_random_quote;
 });
+
+function copyToClipboard() {
+    const quoteText = document.getElementById('quoteLink').innerText;
+    navigator.clipboard.writeText(quoteText).then(() => {
+        alert('Quote API link copied to clipboard');
+    }).catch(err => {
+        console.error('Failed to copy quote API link:', err);
+    });
+}
