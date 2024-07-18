@@ -1,8 +1,22 @@
 const express = require('express');
-const app = express();
+const rateLimit = require('express-rate-limit');
 const path = require('path');
 const quotes = require('./quotes');
+
+const app = express();
 const port = 8080;
+
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // Limit each IP to 100 requests per windowMs
+    handler: (req, res) => {
+        res.status(429).json({
+            message: 'Too many requests from this IP, please try again after 15 minutes'
+        });
+    }
+});
+
+app.use(limiter);
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
