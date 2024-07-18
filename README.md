@@ -33,6 +33,17 @@ This will return a JSON response with a random quote and its author.
 }
 ```
 
+## Rate Limiting
+- **Window Duration**: 15 minutes
+- **Maximum Requests**: 100 requests per IP within the window duration
+- **Response on Limit Exceed**: A 429 Too Many Requests status code with the following JSON response
+
+```json
+{
+  "message": "Too many requests from this IP, please try again after 15 minutes"
+}
+```
+
 ## Usage
 
 You can use the API to display a random quote on your website or application to motivate your users. Here's an example of how you can use the API with JavaScript:
