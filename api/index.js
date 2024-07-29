@@ -2,9 +2,8 @@ const express = require('express');
 const rateLimit = require('express-rate-limit');
 const path = require('path');
 const quotes = require('./quotes');
-
 const app = express();
-const port = 8080;
+const PORT = process.env.PORT || 3000;
 
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
@@ -15,19 +14,26 @@ const limiter = rateLimit({
         });
     }
 });
-
 app.use(limiter);
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
-
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'RandomQuotesAPI.html'));
 });
+
+app.get("/docs", (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'Docs.html'));
+});
+
+app.get("/api/quotes", (req, res) => {
+    res.json(quotes);
+})
 
 app.get("/api/random", (req, res) => {
     var randomIndex = Math.floor(Math.random() * quotes.length);
@@ -35,6 +41,17 @@ app.get("/api/random", (req, res) => {
     res.status(200).json(randomQuote);
 });
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+app.get('/api/quotes/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    const quote = quotes.find(q => q.id === id);
+
+    if (quote) {
+        res.json(quote);
+    } else {
+        res.status(404).send({ message: 'Quote not found please try again with different id' });
+    }
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
