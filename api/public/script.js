@@ -11,8 +11,13 @@ function get_random_quote() {
     fetch('https://random-quotes-freeapi.vercel.app/api/random')
     .then(response => response.json())
     .then(data => {
-        document.getElementById("quote").textContent = data.quote; 
-        document.getElementById("quoteAuthor").textContent = "- " + data.author;
+        let quote = document.getElementById("quote");
+        quote.style.display = 'block';
+        quote.textContent = data.quote;
+
+        let quoteAuthor = document.getElementById("quoteAuthor");
+        quoteAuthor.style.display = 'block';
+        quoteAuthor.textContent = data.author;
     })
     .catch(error => {
         console.error('Error fetching quote:', error);

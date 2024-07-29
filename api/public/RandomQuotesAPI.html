@@ -10,46 +10,67 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
     <title>RandomQuotes API</title>
+    <style>
+        .quote-container {
+            text-align: center;
+            margin-top: 100px; /* Adjusted to account for fixed navbar */
+        }
+        .sub-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        #quoteLink {
+            word-break: break-all;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
-        <a class="navbar-brand" href="#">
-            <h2><b>RandomQuotes API</b></h2>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#"><b>Home</b></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/api/random"><b>Random Quote</b></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/altamsh04/RandomQuotes-API"><b>GitHub Repo</b></a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <label><b>RandomQuotes API</b></label>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/"><b>Home</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/docs"><b>Docs</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/api/quotes"><b>Quotes</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/api/random"><b>Random</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/altamsh04/RandomQuotes-API"><b>GitHub</b></a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
-    <div class="container">
+    <div class="container text-center">
         <h1 id="typing-heading"></h1>
         <p>Get random motivational quotes. It's a free and open API.</p>
         <div class="sub-container">
-            <h3 id="quoteLink"><b>https://random-quotes-freeapi.vercel.app/api/random</b></h3>
-            <button style="background-color: #97c64a; border: 0;" class="btn btn-primary ml-3" onclick="copyToClipboard()">
+            <label id="quoteLink" style="margin: 9px;" class="text-break">https://random-quotes-freeapi.vercel.app/api/random</label>
+            <button class="btn btn-success ml-3" onclick="copyToClipboard()">
                 <i class="fas fa-copy"></i>
             </button>
         </div>
         <div class="quote-container">
-            <h3 id="quote"></h3>
-            <h6 id="quoteAuthor"></h6>
-            <button style="background-color: #97c64a; border: 0;" class="btn btn-primary ml-3" onclick="get_random_quote()">
-                GET
-            </button>
+            <h3 style="display: none;" id="quote"></h3>
+            <h6 style="display: none;" id="quoteAuthor"></h6>
+            <button class="btn btn-success mt-3" onclick="get_random_quote()">GET</button>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

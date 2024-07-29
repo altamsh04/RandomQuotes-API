@@ -1,48 +1,57 @@
 body {
     font-family: "Noto Sans", sans-serif;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f8f9fa;
 }
+
 h1 {
     text-align: center;
 }
-.container {            
+
+.container {
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     background: #000;
-    margin: 19px;
+    margin: 24px;
     color: aliceblue;
     border-radius: 10px;
-    height: 100vh;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
 }
+
 .sub-container {
     display: flex;
     justify-content: center;
-    flex-direction: row;
     align-items: center;
     background: #333;
     color: aliceblue;
     border-radius: 10px;
     padding: 10px;
-    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 700px;
 }
 
 .quote-container {
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     background: #333;
-    align-self: center;
     color: aliceblue;
     border-radius: 10px;
     padding: 18px;
     margin-top: 46px;
-    width: 80%;
+    width: 100%;
     max-width: 700px;
     overflow-y: auto;
     max-height: 200px;
@@ -65,4 +74,53 @@ h1 {
     50% {
         background-color: #333;
     }
+}
+
+@media (max-width: 768px) {
+    .container, .sub-container, .quote-container {
+        padding: 15px;
+    }
+
+    .sub-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .quote-container {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container, .sub-container, .quote-container {
+        padding: 10px;
+    }
+
+    .sub-container {
+        margin-top: 10px;
+    }
+
+    .quote-container {
+        margin-top: 15px;
+    }
+}
+
+.footer {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border-top: 1px solid #e9ecef;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .container {
+    max-width: 1140px;
+    margin: 0 auto;
 }
