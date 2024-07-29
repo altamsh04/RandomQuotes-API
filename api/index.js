@@ -32,7 +32,7 @@ app.get("/docs", (req, res) => {
 });
 
 app.get("/api/quotes", (req, res) => {
-    res.json(quotes);
+    res.status(200).json(quotes);
 })
 
 app.get("/api/random", (req, res) => {
@@ -46,7 +46,7 @@ app.get('/api/quotes/:id', (req, res) => {
     const quote = quotes.find(q => q.id === id);
 
     if (quote) {
-        res.json(quote);
+        res.status(200).json(quote);
     } else {
         res.status(404).send({ message: 'Quote not found please try again with different id' });
     }
